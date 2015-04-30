@@ -498,7 +498,7 @@ class ChangeSetDelegate {
 	void customChange(Map params, Closure closure = null) {
 		def change = new CustomChangeWrapper()
 		change.classLoader = this.class.classLoader
-		change.className = DelegateUtil.expandExpressions(params['class'], databaseChangeLog)
+		change.class = DelegateUtil.expandExpressions(params['class'], databaseChangeLog)
 
 		if ( closure ) {
 			def delegate = new KeyValueDelegate()
