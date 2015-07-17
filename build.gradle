@@ -9,7 +9,7 @@ sourceCompatibility = 1.5
 targetCompatibility = 1.5
 
 group = 'de.hshsoft.externals'
-archivesBaseName = 'groovy-liquibase-dsl'
+archivesBaseName = 'de.hshsoft.groovy-liquibase-dsl'
 version = '1.0.2'
 ext.isSnapshot = version.endsWith('SNAPSHOT')
 
@@ -35,7 +35,7 @@ repositories {
 dependencies {
   compile 'org.codehaus.groovy:groovy:2.4.1'
   compile 'org.codehaus.groovy:groovy-sql:2.4.1'
-  compile 'org.liquibase:liquibase-core:3.3.2'
+  compile 'org.liquibase:liquibase-core:3.4.0'
   testCompile 'junit:junit:4.12'
   testRuntime 'com.h2database:h2:1.4.185'
   archives 'org.apache.maven.wagon:wagon-ssh:2.8'

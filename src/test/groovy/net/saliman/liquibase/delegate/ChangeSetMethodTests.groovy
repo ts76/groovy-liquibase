@@ -84,7 +84,7 @@ class ChangeSetMethodTests extends ChangeSetTests {
 		}
 
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
 		assertEquals(new RawSQLChange("DROP TABLE monkey").sql, changes[0].sql)
@@ -103,7 +103,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 			rollback rollbackSql
 		}
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 2, changes.size()
 		assertEquals(new RawSQLChange("UPDATE monkey_table SET emotion='angry' WHERE status='PENDING'").sql, changes[0].sql)
@@ -123,7 +123,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		}
 
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
 		assertEquals(new RawSQLChange("UPDATE monkey_table SET emotion='angry' WHERE status='PENDING'").sql, changes[0].sql)
@@ -143,7 +143,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		}
 
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 2, changes.size()
 		assertEquals(new RawSQLChange("UPDATE monkey_table SET emotion='angry' WHERE status='PENDING'").sql, changes[0].sql)
@@ -163,7 +163,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		}
 
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
 		assertTrue changes[0] instanceof DeleteDataChange
@@ -188,7 +188,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		}
 
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 2, changes.size()
 		assertTrue changes[0] instanceof UpdateDataChange
@@ -215,7 +215,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		}
 
 		assertEquals 0, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 2, changes.size()
 		assertTrue changes[0] instanceof UpdateDataChange
@@ -264,7 +264,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		// in this case, we expect the addColumn change to also be the change
 		// inside the rollback.
 		assertEquals 1, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
 		assertTrue changes[0] instanceof AddColumnChange
@@ -289,7 +289,7 @@ ALTER TABLE monkey_table DROP COLUMN angry;"""
 		// in this case, we expect the addColumn change to also be the change
 		// inside the rollback.
 		assertEquals 1, changeSet.changes.size()
-		def changes = changeSet.getRollBackChanges()
+		def changes = changeSet.rollback.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
 		assertTrue changes[0] instanceof AddColumnChange

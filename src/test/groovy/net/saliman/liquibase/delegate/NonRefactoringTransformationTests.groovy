@@ -218,7 +218,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -298,7 +298,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			loadUpdateData([:]) {	}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -343,7 +343,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -420,7 +420,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			update([:]) {	}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -452,7 +452,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -489,7 +489,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -519,7 +519,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			delete([:]) { }
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -542,7 +542,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			}
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -564,7 +564,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			delete(catalogName: 'catalog', schemaName: 'schema', tableName: 'monkey')
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -599,7 +599,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			tagDatabase([:])
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -617,7 +617,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			tagDatabase(tag: 'monkey')
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -635,7 +635,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			tagDatabase 'monkey'
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -654,7 +654,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			stop([:])
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -672,7 +672,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			stop(message: 'Stop the refactoring. Just...stop.')
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()
@@ -690,7 +690,7 @@ class NonRefactoringTransformationTests extends ChangeSetTests {
 			stop 'Stop the refactoring. Just...stop.'
 		}
 
-		assertEquals 0, changeSet.getRollBackChanges().length
+		assertEquals 0, changeSet.rollback.changes.size()
 		def changes = changeSet.changes
 		assertNotNull changes
 		assertEquals 1, changes.size()

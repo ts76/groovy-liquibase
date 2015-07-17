@@ -40,7 +40,7 @@ class ChangeSetTests {
 	def CHANGESET_AUTHOR = 'tlberglund'
 	def CHANGESET_FILEPATH = '/filePath'
 	def sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-	def changeSet
+	ChangeSet changeSet
 	def resourceAccessor
 	def oldStdOut = System.out;
 	def bufStr = new ByteArrayOutputStream()

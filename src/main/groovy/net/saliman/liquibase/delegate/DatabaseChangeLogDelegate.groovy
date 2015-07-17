@@ -216,9 +216,10 @@ class DatabaseChangeLogDelegate {
 	  }
     def dbms = params['dbms'] ?: null
     def changeLogParameters = databaseChangeLog.changeLogParameters
-
+	def isGlobal = true
+	
     if (!params['file']) {
-      changeLogParameters.set(params['name'], params['value'], context as ContextExpression, labels as Labels, dbms)
+      changeLogParameters.set(params['name'], params['value'], context as ContextExpression, labels as Labels, dbms, isGlobal, databaseChangeLog )
     } else {
 	    String propFile = params['file']
       def props = new Properties()
@@ -229,7 +230,7 @@ class DatabaseChangeLogDelegate {
 	      propertiesStreams.each { stream ->
 		      props.load(stream)
 		      props.each { k, v ->
-			      changeLogParameters.set(k, v, context as ContextExpression, labels as Labels, dbms)
+			      changeLogParameters.set(k, v, context as ContextExpression, labels as Labels, dbms, isGlobal, databaseChangeLog )
 		      }
 	      }
       }

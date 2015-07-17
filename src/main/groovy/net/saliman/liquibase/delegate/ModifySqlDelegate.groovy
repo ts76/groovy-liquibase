@@ -21,9 +21,10 @@ import liquibase.Contexts
 import liquibase.Labels
 import liquibase.exception.ChangeLogParseException
 import liquibase.sql.visitor.SqlVisitor;
-import liquibase.sql.visitor.SqlVisitorFactory;
+import liquibase.sql.visitor.SqlVisitorFactory
 import liquibase.changelog.ChangeSet
 import liquibase.util.PatchedObjectUtil
+
 
 /**
  * This delegate handles the Liquibase ModifySql element, which can be used

@@ -32,7 +32,7 @@ class DelegateUtil {
 	static def expandExpressions(expression, databaseChangeLog) {
 		// Don't expand a null into the text "null"
 		if ( expression != null ) {
-			databaseChangeLog.changeLogParameters.expandExpressions(expression.toString())
+			databaseChangeLog.changeLogParameters.expandExpressions( expression.toString(), databaseChangeLog )
 		}
 	}
 }

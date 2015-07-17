@@ -25,7 +25,7 @@ import liquibase.change.ColumnConfig
 import liquibase.util.ISODateFormat
 import liquibase.change.ConstraintsConfig
 import java.sql.Timestamp
-
+import liquibase.servicelocator.PrioritizedService
 
 /**
  *  This class is the main Groovy DSL serializer.  It creates Groovy changelogs
@@ -62,8 +62,12 @@ class GroovyChangeLogSerializer
 		serializeObject(change)
 
 	}
+	
+	@Override
+	int getPriority() {
+		return PrioritizedService.PRIORITY_DEFAULT;
+	}
 
-//	@Override
 	@Override
 	void write(List changeSets, OutputStream out) {
 		out << 'databaseChangeLog {\n'
